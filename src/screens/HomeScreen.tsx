@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet,TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -16,9 +16,17 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.safe}>
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.logo}>🚗 АвтоДрайв</Text>
-          <Text style={styles.phone}>+7 (8453) 00-00-00</Text>
-        </View>
+  <Text style={styles.logo}>🚗 АвтоДрайв</Text>
+  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 16 }}>
+    <Text style={styles.phone}>+7 (9873) 79-59-26</Text>
+    <TouchableOpacity onPress={() => navigation.navigate('Contacts')}>
+    <Text style={{ fontSize: 18, color: '#E63329', fontWeight: 'bold' }}>📍</Text>
+  </TouchableOpacity>
+  <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+      <Text style={{ fontSize: 18, color: '#E63329', fontWeight: 'bold' }}>👤</Text>
+    </TouchableOpacity>
+  </View>
+</View>
 
         <View style={styles.hero}>
           <Text style={styles.heroTitle}>Купите автомобиль мечты</Text>
