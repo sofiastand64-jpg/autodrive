@@ -22,12 +22,12 @@ export default function ContactsScreen() {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text style={styles.back}>← Назад</Text>
-          </TouchableOpacity>
-          <Text style={styles.headerTitle}>Контакты</Text>
-          <View style={{ width: 60 }} />
-        </View>
+  <TouchableOpacity onPress={() => navigation.goBack()}>
+    <Text style={styles.back}>← Назад</Text>
+  </TouchableOpacity>
+  <Text style={styles.headerTitle}>Контакты</Text>
+  <View style={{ width: 60 }} />
+</View>
 
         {/* Карта */}
         <View style={styles.mapContainer}>

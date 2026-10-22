@@ -24,10 +24,26 @@ export default function OrderScreen() {
 
   return (
     <SafeAreaView style={styles.safe}>
+      
+      {/* Кнопка "Назад" в самом верху */}
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Text style={styles.back}>← Назад</Text>
+        </TouchableOpacity>
+      </View>
+
       <View style={styles.content}>
         <Text style={styles.title}>Заявка на {car.name}</Text>
         <Text style={styles.subtitle}>Оставьте телефон — перезвоним за 15 минут</Text>
-        <TextInput style={styles.input} value={phone} onChangeText={setPhone} placeholder="+7 (___) ___-__-__" keyboardType="phone-pad" />
+        
+        <TextInput 
+          style={styles.input} 
+          value={phone} 
+          onChangeText={setPhone} 
+          placeholder="+7 (___) ___-__-__" 
+          keyboardType="phone-pad" 
+        />
+        
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Отправить</Text>
         </TouchableOpacity>
@@ -38,7 +54,9 @@ export default function OrderScreen() {
 
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: '#fff' },
-  content: { padding: 24 },
+  header: { paddingHorizontal: 16, paddingTop: 16 },
+  back: { fontSize: 14, color: '#E63329' },
+  content: { padding: 24, paddingTop: 8 },
   title: { fontSize: 22, fontWeight: '700', color: '#222' },
   subtitle: { fontSize: 14, color: '#666', marginTop: 8, marginBottom: 24 },
   input: { borderWidth: 1, borderColor: '#DDD', borderRadius: 8, padding: 14, fontSize: 16, marginBottom: 16 },

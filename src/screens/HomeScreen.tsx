@@ -25,6 +25,9 @@ export default function HomeScreen() {
   <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
       <Text style={{ fontSize: 18, color: '#E63329', fontWeight: 'bold' }}>👤</Text>
     </TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate('Favorites')}>
+  <Text style={{ fontSize: 18, color: '#E63329', fontWeight: 'bold' }}>❤️</Text>
+</TouchableOpacity>
   </View>
 </View>
 

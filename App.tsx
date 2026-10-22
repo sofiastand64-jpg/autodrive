@@ -7,7 +7,8 @@ import OrderScreen from './src/screens/OrderScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import ContactsScreen from './src/screens/ContactsScreen';
 import type { RootStackParamList } from './src/types';
-
+import FavoritesScreen from './src/screens/FavoritesScreen';
+// ... 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <Stack.Screen name="Order" component={OrderScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Contacts" component={ContactsScreen} />
+          <Stack.Screen name="Favorites" component={FavoritesScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
