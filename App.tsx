@@ -8,6 +8,7 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import ContactsScreen from './src/screens/ContactsScreen';
 import type { RootStackParamList } from './src/types';
 import FavoritesScreen from './src/screens/FavoritesScreen';
+import TestDriveScreen from './src/screens/TestDriveScreen';
 // ... 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -22,6 +23,7 @@ export default function App() {
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Contacts" component={ContactsScreen} />
           <Stack.Screen name="Favorites" component={FavoritesScreen} />
+          <Stack.Screen name="TestDrive" component={TestDriveScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

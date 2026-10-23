@@ -30,6 +30,9 @@ export default function CarDetailScreen() {
           <Text style={styles.price}>{car.price.toLocaleString('ru-RU')} ₽</Text>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Order', { car })}>
             <Text style={styles.buttonText}>Заказать</Text>
+            <TouchableOpacity style={[styles.button, styles.testDriveButton]} onPress={() => navigation.navigate('TestDrive', { car })}>
+  <Text style={styles.buttonText}>Записаться на тест-драйв</Text>
+</TouchableOpacity>
           </TouchableOpacity>
           <Text style={styles.sectionTitle}>Характеристики</Text>
           <View style={styles.specRow}><Text style={styles.specLabel}>Мощность</Text><Text style={styles.specValue}>{car.power} л.с.</Text></View>
@@ -57,4 +60,5 @@ const styles = StyleSheet.create({
   specRow: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#eee' },
   specLabel: { fontSize: 14, color: '#666' },
   specValue: { fontSize: 14, color: '#222', fontWeight: '600' },
+  testDriveButton: { backgroundColor: '#1A1A2E', marginTop: 8 },
 });

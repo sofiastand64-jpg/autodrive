@@ -19,6 +19,7 @@ export type RootStackParamList = {
   Order: { car: Car };
   Profile: undefined; // <-- Добавили
   Contacts: undefined;
-  Favorites: undefined; 
+  Favorites: undefined;
+  TestDrive: { car: Car }; 
 };
 

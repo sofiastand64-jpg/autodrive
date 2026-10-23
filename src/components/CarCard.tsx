@@ -1,3 +1,4 @@
+import { useTheme } from '../theme';
 import { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import type { Car } from '../types';
@@ -5,6 +6,7 @@ import { getFavorites, toggleFavorite } from '../data/favorites';
 
 export default function CarCard({ car, onPress }: { car: Car; onPress: () => void }) {
   const [isFav, setIsFav] = useState(false);
+  const { colors } = useTheme();
 
   useEffect(() => {
     getFavorites().then(favs => setIsFav(favs.includes(car.id)));
@@ -17,7 +19,7 @@ export default function CarCard({ car, onPress }: { car: Car; onPress: () => voi
   };
 
   return (
-    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.8}>
+     <TouchableOpacity style={[styles.card, { backgroundColor: colors.card }]}>
       <Image source={car.image} style={styles.image} />
       
       {/* Кнопка сердечка */}
@@ -28,8 +30,8 @@ export default function CarCard({ car, onPress }: { car: Car; onPress: () => voi
       <View style={styles.tag}><Text style={styles.tagText}>{car.tag}</Text></View>
       
       <View style={styles.info}>
-        <Text style={styles.name}>{car.name}</Text>
-        <Text style={styles.year}>{car.year}</Text>
+        <Text style={[styles.name, { color: colors.text }]}>{car.name}</Text>
+        <Text style={[styles.year, { color: colors.subtext }]}>{car.year}</Text>
         <View style={styles.bottom}>
           <Text style={styles.price}>{car.price.toLocaleString('ru-RU')} ₽</Text>
           <TouchableOpacity style={styles.button} onPress={onPress}>
